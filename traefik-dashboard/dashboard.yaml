@@ -1,6 +1,7 @@
 apiVersion: traefik.containo.us/v1alpha1
 kind: IngressRoute
 metadata:
+  # don't use 'traefik-dashboard' as name, this chart creates an IngressRoute with that name to allow internal communication
   name: dashboard
 spec:
   entryPoints:
@@ -11,3 +12,5 @@ spec:
       services:
         - name: api@internal
           kind: TraefikService
+
+# dashboard is expose in http://traefik.localhost/dashboard/#/
