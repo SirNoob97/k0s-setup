@@ -71,26 +71,26 @@ spec:
   konnectivity:
     agentPort: 8132
     adminPort: 8133
-  extensions:
-    helm:
-      repositories:
-      - name: traefik
-        url: https://helm.traefik.io/traefik
-      - name: bitnami
-        url: https://charts.bitnami.com/bitnami
-      charts:
-      - name: traefik
-        chartname: traefik/traefik
-        version: "10.1.1"
-        namespace: default
-      - name: metallb
-        chartname: bitnami/metallb
-        version: "2.5.2"
-        namespace: default
-        values: |2
-          configInline:
-            address-pools:
-            - name: generic-cluster-pool
-              protocol: layer2
-              addresses:
-              - 10.96.0.200-10.96.0.205
+# extensions:
+#   helm:
+#     repositories:
+#     - name: traefik
+#       url: https://helm.traefik.io/traefik
+#     - name: bitnami
+#       url: https://charts.bitnami.com/bitnami
+#     charts:
+#     - name: traefik
+#       chartname: traefik/traefik
+#       version: "10.1.1"
+#       namespace: default
+#     - name: metallb
+#       chartname: bitnami/metallb
+#       version: "2.5.2"
+#       namespace: default
+#       values: |2
+#         configInline:
+#           address-pools:
+#           - name: generic-cluster-pool
+#             protocol: layer2
+#             addresses:
+#             - 10.244.0.200-10.244.0.205
