@@ -4,6 +4,9 @@
 apiVersion: traefik.containo.us/v1alpha1
 kind: IngressRoute
 metadata:
+  annotations:
+    kubernetes.io/ingress.class: traefik
+  namespace: traefik-ic
   name: dashboard
 spec:
   entryPoints:
