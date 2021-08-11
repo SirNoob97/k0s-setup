@@ -1,0 +1,13 @@
+ingressClass:
+  enabled: true
+  isDefaultClass: false
+  fallbackApiVersion: networking.k8s.io/v1
+
+ingressRoute:
+  dashboard:
+    enabled: true
+    annotations:
+      kubernetes.io/ingress.class: "traefik"
+
+additionalArguments:
+  - "--providers.kubernetesingress.ingressclass=traefik"
