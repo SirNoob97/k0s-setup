@@ -11,7 +11,7 @@ helm install --namespace=metallb-system metallb bitnami/metallb -f ./metallb-val
 echo ""
 
 helm repo add traefik https://helm.traefik.io/traefik
-helm install --namespace=kube-system traefik traefik/traefik
+helm install --namespace=traefik-ic traefik traefik/traefik -f ./traefik-values.yaml
 
 echo -e "\n\tTraefik ingressroute example does not work at the version 10.1.1\n\tThis is because Traefik uses a self-signed certificate and is not accepted by browsers"
 
